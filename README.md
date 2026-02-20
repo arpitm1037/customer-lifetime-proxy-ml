@@ -166,3 +166,17 @@ Real-time inference support
 Arpit Mishra
 B.Tech CSE (AI/ML)
 Data Science & Machine Learning Enthusiast
+
+
+## 📊 Consumer Flow Diagram:-
+
+
+1️⃣ From First Use to “Results Are Ready” :-
+
+<img width="1155" height="2097" alt="1st" src="https://github.com/user-attachments/assets/dfd76aa2-8942-4535-aee8-fb0f3711b5fc" />
+
+
+2️⃣ Understanding Results and Exploring Customers :-
+
+<img width="1120" height="1580" alt="2nd" src="https://github.com/user-attachments/assets/b6e97d1b-21d6-46ae-b175-0bb48d3e50a8" />
+
