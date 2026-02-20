@@ -177,3 +177,13 @@ These mockups show how a **non-technical user** experiences the product and unde
        alt="Customer Detail View"
        width="700">
 </p>
+
+
+
+| Feature Group           | Purpose                                                 | Capabilities                                                                                                                                                                                | User Benefit                                 |
+| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Data Ingestion          | Allow users to provide retail data to the system        | Upload retail transaction dataset (CSV)<br>Validate file format and required columns<br>Handle invalid or missing data gracefully<br>Store raw uploaded data for processing                 | Easy onboarding without technical knowledge  |
+| Customer Analysis       | Convert raw data into meaningful customer understanding | Automatically clean transaction data<br>Generate customer-level summaries<br>Capture customer buying behavior over time<br>Prepare data for future value estimation                         | No manual analysis or spreadsheets required  |
+| Future Value Estimation | Estimate which customers will be valuable               | Estimate future customer value using recent behavior<br>Group customers into value categories (Low, Medium, High, VIP)<br>Generate predictions in batch mode<br>Store predictions for reuse | Early identification of high-value customers |
+| Insights & Dashboard    | Help users explore and understand results               | View customer segments by value category<br>Analyze customer cohorts over time<br>Filter insights by time range and segment<br>View individual customer details                             | Clear, actionable business insights          |
+| System & Management     | Ensure reliability and repeatability                    | Save processed data and results<br>Support retraining on new datasets<br>Maintain historical results<br>Ensure consistent outputs                                                           | Stable and reusable system                   |
