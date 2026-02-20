@@ -57,7 +57,7 @@ Customer behavior is summarized using engineered features:
 ### Target Variable (Proxy Label)
 - Future **6-month spend** is calculated per customer  
 - Customers are bucketed into discrete lifetime proxy classes  
-  (Low, Medium, High, VIP)
+  *(Low, Medium, High, VIP)*
 
 ### Model
 - **Random Forest Classifier**
@@ -65,7 +65,7 @@ Customer behavior is summarized using engineered features:
 **Why Random Forest?**
 - Handles non-linear relationships well  
 - Robust to feature scaling  
-- Works effectively with tabular behavioral data  
+- Effective for tabular behavioral data  
 
 ---
 
@@ -79,8 +79,8 @@ Customer behavior is summarized using engineered features:
 ---
 
 ## 📏 Evaluation Metrics
-- Macro F1-score (handles class imbalance)
-- Confusion matrix for per-class performance analysis
+- Macro F1-score (handles class imbalance)  
+- Confusion matrix for per-class performance analysis  
 
 ---
 
@@ -95,7 +95,7 @@ Customer behavior is summarized using engineered features:
 ## ⚠️ Limitations
 - Lifetime value is approximated using a proxy, not true CLV  
 - Model performance depends on historical data quality  
-- Predictions are batch-based (not real-time inference)
+- Predictions are batch-based (not real-time inference)  
 
 ---
 
@@ -125,14 +125,55 @@ Data Science & Machine Learning Enthusiast
 
 ### 1️⃣ From First Use to “Results Are Ready”
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/dfd76aa2-8942-4535-aee8-fb0f3711b5fc" 
-       alt="Consumer Flow - Data Upload to Results" 
-       width="700">
+  <img src="https://github.com/user-attachments/assets/dfd76aa2-8942-4535-aee8-fb0f3711b5fc"
+       alt="Consumer Flow - Data Upload to Results"
+       width="650">
 </p>
 
 ### 2️⃣ Understanding Results and Exploring Customers
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b6e97d1b-21d6-46ae-b175-0bb48d3e50a8" 
-       alt="Consumer Flow - Dashboard and Insights" 
+  <img src="https://github.com/user-attachments/assets/b6e97d1b-21d6-46ae-b175-0bb48d3e50a8"
+       alt="Consumer Flow - Dashboard and Insights"
+       width="650">
+</p>
+
+---
+
+## 🖼 Consumer UI Mockups (Figma – Non-Technical View)
+
+These mockups show how a **non-technical user** experiences the product and understands customer insights without any knowledge of machine learning or backend systems.
+
+### 1️⃣ Welcome / Introduction Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/200437aa-9235-4f42-82b7-fa1ea2b56faa"
+       alt="Welcome Screen"
+       width="700">
+</p>
+
+### 2️⃣ Data Upload Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/09f9e4e2-05e8-4b13-aa0a-fdb47bb942c3"
+       alt="Data Upload Screen"
+       width="700">
+</p>
+
+### 3️⃣ Processing / Preparing Insights Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2a3bdcf9-989b-4bbc-b4da-dc6a3a1431a1"
+       alt="Processing Screen"
+       width="700">
+</p>
+
+### 4️⃣ Customer Insights Dashboard
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8a54c5d-44c9-4192-9139-c90eaa5757bc"
+       alt="Insights Dashboard"
+       width="700">
+</p>
+
+### 5️⃣ Customer Detail View
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/acc693a2-ae26-4914-8058-b84b43a9be4d"
+       alt="Customer Detail View"
        width="700">
 </p>
