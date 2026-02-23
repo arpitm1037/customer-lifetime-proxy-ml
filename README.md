@@ -189,3 +189,18 @@ These mockups show how a **non-technical user** experiences the product and unde
 | Future Value Estimation | Estimate which customers will be valuable               | Estimate future customer value using recent behavior<br>Group customers into value categories (Low, Medium, High, VIP)<br>Generate predictions in batch mode<br>Store predictions for reuse | Early identification of high-value customers |
 | Insights & Dashboard    | Help users explore and understand results               | View customer segments by value category<br>Analyze customer cohorts over time<br>Filter insights by time range and segment<br>View individual customer details                             | Clear, actionable business insights          |
 | System & Management     | Ensure reliability and repeatability                    | Save processed data and results<br>Support retraining on new datasets<br>Maintain historical results<br>Ensure consistent outputs                                                           | Stable and reusable system                   |
+
+📌 API Planning:-
+
+| API Category | Endpoint                            | Method | Description                                              |
+| ------------ | ----------------------------------- | ------ | -------------------------------------------------------- |
+| Dataset      | `/api/datasets/upload`              | POST   | Upload retail transaction dataset and trigger processing |
+| Dataset      | `/api/datasets`                     | GET    | List uploaded datasets and their processing status       |
+| Analysis     | `/api/analysis/run`                 | POST   | Start data processing and customer value estimation      |
+| Analysis     | `/api/analysis/status/{dataset_id}` | GET    | Check processing status for a dataset                    |
+| Insights     | `/api/insights/segments`            | GET    | Fetch customer segments by value category and time       |
+| Insights     | `/api/insights/cohorts`             | GET    | Fetch cohort-based customer summaries                    |
+| Customer     | `/api/customers/{customer_id}`      | GET    | Fetch detailed information for a single customer         |
+| Model        | `/api/model/summary`                | GET    | Fetch latest model run details and evaluation metrics    |
+
+
