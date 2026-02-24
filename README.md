@@ -215,3 +215,15 @@ These mockups show how a **non-technical user** experiences the product and unde
 | ValuePrediction  | Stores predicted customer value category  | customer_id, value_bucket, prediction_date, dataset_id                       |
 | Cohort           | Represents customer cohort grouping       | cohort_id, cohort_month, dataset_id                                          |
 | ModelRun         | Tracks each analysis and model execution  | run_id, dataset_id, run_date, evaluation_metrics, status                     |
+
+
+
+## 🗄 Database Design (ER Diagram)
+
+The ER diagram below illustrates how the core entities in the system are related, including datasets, customers, transactions, engineered features, predictions, and cohorts.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5f1f6e11-3df6-406c-9e57-20dc9f31c7b1"
+       alt="ER Diagram - Retail LTV Proxy Modeling"
+       width="800">
+</p>
