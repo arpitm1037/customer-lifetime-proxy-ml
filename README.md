@@ -328,12 +328,12 @@ Containers:
 - Docker Compose  
 - Git  
 
-### Step 1: Clone the Repository
+**Step 1: Clone the Repository**
 ```bash
 git clone <repository-url>
 cd retail-ltv-proxy-modeling
-Step 2: Configure Environment Variables
 
+Step 2: Configure Environment Variables
 Create a .env file in the root directory:
 
 DATABASE_NAME=ltv_db
@@ -341,10 +341,11 @@ DATABASE_USER=postgres
 DATABASE_PASSWORD=postgres
 DATABASE_HOST=db
 DATABASE_PORT=5432
-
 DJANGO_SECRET_KEY=your-secret-key
 DEBUG=True
+
 Step 3: Build and Start Services
+
 docker-compose up --build
 
 This builds all containers and starts frontend, backend, and database services.
@@ -355,7 +356,8 @@ Frontend UI: http://localhost:3000
 
 Backend API: http://localhost:8000
 
-☁️ Production Deployment (Single VM)
+Production Deployment (Single VM)
+
 Step 1: Provision VM
 
 Use AWS EC2 (Ubuntu 20.04 or later)
@@ -369,12 +371,16 @@ Open ports:
 5432 – Database (internal only)
 
 Step 2: Install Dependencies
+
 sudo apt update
 sudo apt install docker docker-compose git -y
+
 Step 3: Deploy Application
+
 git clone <repository-url>
 cd retail-ltv-proxy-modeling
 docker-compose up --build -d
+
 Step 4: Production Configuration
 
 Set DEBUG=False
@@ -383,46 +389,18 @@ Use environment variables for secrets
 
 (Optional) Use Nginx as a reverse proxy
 
-🔄 Application Workflow After Deployment
+Application Workflow After Deployment
 
-User opens the web application
+User opens the web application → uploads retail transaction dataset (CSV) → backend validates and processes data → feature engineering and lifetime proxy logic run → predictions and cohorts are stored in the database → user explores insights via dashboards and customer views.
 
-Uploads retail transaction dataset (CSV)
+Data Persistence
 
-Backend validates and processes data
+PostgreSQL runs as a persistent service. Docker volumes retain data across restarts. Uploaded datasets and predictions remain available.
 
-Feature engineering and lifetime proxy logic run
+Security Considerations
 
-Predictions and cohorts are stored in the database
+Secrets are managed via environment variables. Database is not exposed publicly. Authentication is out of scope. Single-tenant usage is assumed.
 
-User explores insights via dashboards and customer views
+Scalability Notes
 
-📦 Data Persistence
-
-PostgreSQL runs as a persistent service
-
-Docker volumes retain data across restarts
-
-Uploaded datasets and predictions remain available
-
-🔐 Security Considerations (Basic)
-
-Secrets managed via environment variables
-
-Database not exposed publicly
-
-No authentication (out of project scope)
-
-Single-tenant usage assumed
-
-📈 Scalability Notes
-
-This deployment is intentionally simple. Possible future improvements:
-
-Background job queues for long-running analysis
-
-Separate ML service for heavy computation
-
-Horizontal scaling of backend services
-
-Cloud-managed database (e.g., AWS RDS
+This deployment is intentionally simple. Future improvements may include background job queues for long-running analysis, separating ML services, horizontal backend scaling, and cloud-managed databases such as AWS RDS.
