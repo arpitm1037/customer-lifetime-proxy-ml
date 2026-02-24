@@ -227,3 +227,14 @@ The ER diagram below illustrates how the core entities in the system are related
        alt="ER Diagram - Retail LTV Proxy Modeling"
        width="800">
 </p>
+
+
+ ## 🏗 System Architecture (High-Level Design)
+
+The diagram below presents the high-level architecture of the system, showing how the user interface, backend services, analytics layer, and database interact with each other.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/488adf69-4108-4d11-8fc1-4fbeaa29d6a0"
+       alt="High Level System Architecture Diagram"
+       width="900">
+</p>
