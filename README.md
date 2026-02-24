@@ -334,7 +334,7 @@ git clone <repository-url>
 cd retail-ltv-proxy-modeling
 
 **Step 2: Configure Environment Variables**
-```bash
+
 Create a .env file in the root directory:
 
 DATABASE_NAME=ltv_db
@@ -346,13 +346,13 @@ DJANGO_SECRET_KEY=your-secret-key
 DEBUG=True
 
 **Step 3: Build and Start Services**
-```bash
+
 docker-compose up --build
 
 This builds all containers and starts frontend, backend, and database services.
 
 **Step 4: Access the Application**
-```bash
+
 Frontend UI: http://localhost:3000
 
 Backend API: http://localhost:8000
