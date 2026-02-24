@@ -262,3 +262,27 @@ The diagram below illustrates the detailed data flow within the system, showing 
        alt="Low Level Data Flow Diagram"
        width="850">
 </p>
+
+
+
+## 🗄 Database Schema Diagram
+
+The diagram below represents the logical database schema, showing the actual tables, key fields, and relationships used in the system.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2092c83c-cbe5-41ee-9e29-ac4b77903275"
+       alt="Database Schema Diagram"
+       width="900">
+</p>
+
+---
+
+## 🔌 API Contracts Diagram
+
+The diagram below illustrates the API interaction flow between the user interface, backend services, and database, defining clear request–response contracts.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0c7830df-ccc8-427c-b5fd-1b48e709f3ba"
+       alt="API Contracts Sequence Diagram"
+       width="850">
+</p>
