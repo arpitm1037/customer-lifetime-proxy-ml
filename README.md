@@ -333,7 +333,8 @@ Containers:
 git clone <repository-url>
 cd retail-ltv-proxy-modeling
 
-Step 2: Configure Environment Variables
+**Step 2: Configure Environment Variables**
+```bash
 Create a .env file in the root directory:
 
 DATABASE_NAME=ltv_db
@@ -344,21 +345,22 @@ DATABASE_PORT=5432
 DJANGO_SECRET_KEY=your-secret-key
 DEBUG=True
 
-Step 3: Build and Start Services
-
+**Step 3: Build and Start Services**
+```bash
 docker-compose up --build
 
 This builds all containers and starts frontend, backend, and database services.
 
-Step 4: Access the Application
-
+**Step 4: Access the Application**
+```bash
 Frontend UI: http://localhost:3000
 
 Backend API: http://localhost:8000
 
 Production Deployment (Single VM)
 
-Step 1: Provision VM
+
+##Step 1: Provision VM
 
 Use AWS EC2 (Ubuntu 20.04 or later)
 
@@ -370,18 +372,21 @@ Open ports:
 
 5432 – Database (internal only)
 
-Step 2: Install Dependencies
+
+##Step 2: Install Dependencies
 
 sudo apt update
 sudo apt install docker docker-compose git -y
 
-Step 3: Deploy Application
+
+##Step 3: Deploy Application
 
 git clone <repository-url>
 cd retail-ltv-proxy-modeling
 docker-compose up --build -d
 
-Step 4: Production Configuration
+
+##Step 4: Production Configuration
 
 Set DEBUG=False
 
