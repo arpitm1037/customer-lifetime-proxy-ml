@@ -179,6 +179,8 @@ These mockups show how a **non-technical user** experiences the product and unde
 </p>
 
 
+
+
 ## Feature Breakdown (WHAT the system does):-
 
 
@@ -189,6 +191,8 @@ These mockups show how a **non-technical user** experiences the product and unde
 | Future Value Estimation | Estimate which customers will be valuable               | Estimate future customer value using recent behavior<br>Group customers into value categories (Low, Medium, High, VIP)<br>Generate predictions in batch mode<br>Store predictions for reuse | Early identification of high-value customers |
 | Insights & Dashboard    | Help users explore and understand results               | View customer segments by value category<br>Analyze customer cohorts over time<br>Filter insights by time range and segment<br>View individual customer details                             | Clear, actionable business insights          |
 | System & Management     | Ensure reliability and repeatability                    | Save processed data and results<br>Support retraining on new datasets<br>Maintain historical results<br>Ensure consistent outputs                                                           | Stable and reusable system                   |
+
+
 
 📌 API Planning:-
 
@@ -202,6 +206,8 @@ These mockups show how a **non-technical user** experiences the product and unde
 | Insights     | `/api/insights/cohorts`             | GET    | Fetch cohort-based customer summaries                    |
 | Customer     | `/api/customers/{customer_id}`      | GET    | Fetch detailed information for a single customer         |
 | Model        | `/api/model/summary`                | GET    | Fetch latest model run details and evaluation metrics    |
+
+
 
 
 📌 Database Entity Identification:-
@@ -218,6 +224,8 @@ These mockups show how a **non-technical user** experiences the product and unde
 
 
 
+
+
 ## 🗄 Database Design (ER Diagram)
 
 The ER diagram below illustrates how the core entities in the system are related, including datasets, customers, transactions, engineered features, predictions, and cohorts.
@@ -229,6 +237,8 @@ The ER diagram below illustrates how the core entities in the system are related
 </p>
 
 
+
+
  ## 🏗 System Architecture (High-Level Design)
 
 The diagram below presents the high-level architecture of the system, showing how the user interface, backend services, analytics layer, and database interact with each other.
@@ -237,4 +247,18 @@ The diagram below presents the high-level architecture of the system, showing ho
   <img src="https://github.com/user-attachments/assets/488adf69-4108-4d11-8fc1-4fbeaa29d6a0"
        alt="High Level System Architecture Diagram"
        width="900">
+</p>
+
+
+
+
+
+## 🔧 System Design (Low-Level Data Flow)
+
+The diagram below illustrates the detailed data flow within the system, showing how user inputs, backend processing, feature engineering, prediction logic, and database interactions are connected.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d81174a0-8bb9-4b27-a886-9d26592aaa9f"
+       alt="Low Level Data Flow Diagram"
+       width="850">
 </p>
