@@ -286,3 +286,143 @@ The diagram below illustrates the API interaction flow between the user interfac
        alt="API Contracts Sequence Diagram"
        width="850">
 </p>
+
+
+
+# 🚀🚀🚀 DEPLOYMENT PLAN
+
+This section explains how the project is deployed and how users can run it locally or access it in a deployed environment. The deployment setup is designed to be simple, reproducible, and suitable for demonstration and evaluation.
+
+---
+
+## 🏗 Deployment Architecture Overview
+The application follows a **single-VM deployment model** using containerized services:
+
+- **Frontend (React):** Served as a static web application  
+- **Backend (Django REST API):** Handles data ingestion, analytics, and ML logic  
+- **Database (PostgreSQL):** Stores transactions, features, predictions, and cohorts  
+- **ML Logic:** Executed inside the backend during analysis runs  
+- **Containerization:** Docker ensures consistency and portability  
+
+All components run on a **single virtual machine (AWS EC2 or equivalent)**.
+
+---
+
+## 🐳 Containerization Strategy
+Docker is used to:
+- Ensure environment consistency  
+- Enable easy setup for evaluators and users  
+- Maintain separation between frontend, backend, and database  
+
+Containers:
+- `frontend` – React application  
+- `backend` – Django REST API + ML logic  
+- `database` – PostgreSQL  
+
+---
+
+## ⚙️ Local Deployment (For Developers & Evaluators)
+
+### Prerequisites
+- Docker  
+- Docker Compose  
+- Git  
+
+### Step 1: Clone the Repository
+```bash
+git clone <repository-url>
+cd retail-ltv-proxy-modeling
+Step 2: Configure Environment Variables
+
+Create a .env file in the root directory:
+
+DATABASE_NAME=ltv_db
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_HOST=db
+DATABASE_PORT=5432
+
+DJANGO_SECRET_KEY=your-secret-key
+DEBUG=True
+Step 3: Build and Start Services
+docker-compose up --build
+
+This builds all containers and starts frontend, backend, and database services.
+
+Step 4: Access the Application
+
+Frontend UI: http://localhost:3000
+
+Backend API: http://localhost:8000
+
+☁️ Production Deployment (Single VM)
+Step 1: Provision VM
+
+Use AWS EC2 (Ubuntu 20.04 or later)
+
+Open ports:
+
+80 / 443 – Frontend
+
+8000 – Backend API
+
+5432 – Database (internal only)
+
+Step 2: Install Dependencies
+sudo apt update
+sudo apt install docker docker-compose git -y
+Step 3: Deploy Application
+git clone <repository-url>
+cd retail-ltv-proxy-modeling
+docker-compose up --build -d
+Step 4: Production Configuration
+
+Set DEBUG=False
+
+Use environment variables for secrets
+
+(Optional) Use Nginx as a reverse proxy
+
+🔄 Application Workflow After Deployment
+
+User opens the web application
+
+Uploads retail transaction dataset (CSV)
+
+Backend validates and processes data
+
+Feature engineering and lifetime proxy logic run
+
+Predictions and cohorts are stored in the database
+
+User explores insights via dashboards and customer views
+
+📦 Data Persistence
+
+PostgreSQL runs as a persistent service
+
+Docker volumes retain data across restarts
+
+Uploaded datasets and predictions remain available
+
+🔐 Security Considerations (Basic)
+
+Secrets managed via environment variables
+
+Database not exposed publicly
+
+No authentication (out of project scope)
+
+Single-tenant usage assumed
+
+📈 Scalability Notes
+
+This deployment is intentionally simple. Possible future improvements:
+
+Background job queues for long-running analysis
+
+Separate ML service for heavy computation
+
+Horizontal scaling of backend services
+
+Cloud-managed database (e.g., AWS RDS
