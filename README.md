@@ -204,3 +204,14 @@ These mockups show how a **non-technical user** experiences the product and unde
 | Model        | `/api/model/summary`                | GET    | Fetch latest model run details and evaluation metrics    |
 
 
+📌 Database Entity Identification:-
+
+| Entity           | Description                               | Key Fields                                                                   |
+| ---------------- | ----------------------------------------- | ---------------------------------------------------------------------------- |
+| Dataset          | Stores metadata about uploaded datasets   | dataset_id, filename, upload_date, status                                    |
+| Customer         | Represents a unique customer              | customer_id, first_purchase_date, last_purchase_date, tenure                 |
+| Transaction      | Stores raw transaction records            | transaction_id, customer_id, invoice_date, amount, quantity                  |
+| CustomerFeatures | Stores engineered customer-level features | customer_id, recency, frequency, monetary, tenure, trend_metrics, dataset_id |
+| ValuePrediction  | Stores predicted customer value category  | customer_id, value_bucket, prediction_date, dataset_id                       |
+| Cohort           | Represents customer cohort grouping       | cohort_id, cohort_month, dataset_id                                          |
+| ModelRun         | Tracks each analysis and model execution  | run_id, dataset_id, run_date, evaluation_metrics, status                     |
