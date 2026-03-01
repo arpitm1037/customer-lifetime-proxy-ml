@@ -409,3 +409,9 @@ Secrets are managed via environment variables. Database is not exposed publicly.
 Scalability Notes
 
 This deployment is intentionally simple. Future improvements may include background job queues for long-running analysis, separating ML services, horizontal backend scaling, and cloud-managed databases such as AWS RDS.
+
+
+
+
+
+
