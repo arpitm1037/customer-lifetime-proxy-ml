@@ -282,10 +282,11 @@ The diagram below represents the logical database schema, showing the actual tab
 The diagram below illustrates the API interaction flow between the user interface, backend services, and database, defining clear request–response contracts.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0c7830df-ccc8-427c-b5fd-1b48e709f3ba"
-       alt="API Contracts Sequence Diagram"
+  <img src="https://github.com/user-attachments/assets/1e2788c9-ae78-4eb8-9ce1-e96fcf6f702d"
+       alt="API Contracts Diagram"
        width="850">
 </p>
+
 
 
 
