@@ -1,0 +1,199 @@
+Watching for file changes with StatReloader
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/sklearn/base.py:463: InconsistentVersionWarning: Trying to unpickle estimator DecisionTreeClassifier from version 1.6.1 when using version 1.8.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/sklearn/base.py:463: InconsistentVersionWarning: Trying to unpickle estimator RandomForestClassifier from version 1.6.1 when using version 1.8.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 08:26:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 08:28:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 08:34:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 08:35:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 08:45:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:00:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:01:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:02:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:09:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:32:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:34:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:37:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:41:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:45:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:53:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:56:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:57:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:58:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 09:59:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:03:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:19:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:29:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:37:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:39:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:47:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:51:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:52:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 10:53:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:21:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:22:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:27:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:29:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:32:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:33:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:34:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:41:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:45:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:49:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:57:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 11:58:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:03:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:08:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:12:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:15:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:22:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:23:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:27:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:31:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:35:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:36:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:38:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:40:00) while time zone support is active.
+  warnings.warn(
+/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1670: RuntimeWarning: DateTimeField Transaction.invoice_date received a naive datetime (2010-12-01 12:43:00) while time zone support is active.
+  warnings.warn(
+Internal Server Error: /api/analytics/upload/
+Traceback (most recent call last):
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: analytics_transaction.total_price
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/arpitmishra/Desktop/customer-lifetime-proxy(1)/backend/apps/analytics/views.py", line 68, in upload_data
+    Transaction.objects.bulk_create(transactions)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/query.py", line 833, in bulk_create
+    returned_columns = self._batched_insert(
+        objs_without_pk,
+    ...<4 lines>...
+        unique_fields=unique_fields,
+    )
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1956, in _batched_insert
+    self._insert(
+    ~~~~~~~~~~~~^
+        item,
+        ^^^^^
+    ...<5 lines>...
+        returning_fields=returning_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/query.py", line 1918, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1925, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/arpitmishra/customer-lifetime-proxy/backend/venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: analytics_transaction.total_price
+[02/Apr/2026 17:54:27] "POST /api/analytics/upload/ HTTP/1.1" 500 21140

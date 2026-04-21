@@ -1,0 +1,205 @@
+.table-container {
+  margin-top: 0;
+  padding-bottom: 2rem;
+}
+
+.table-container h3, .cohort-section h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: #111;
+}
+
+.table-container table, .custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: 0.875rem;
+  font-family: Arial, sans-serif;
+}
+
+.table-container th, .custom-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 600;
+  background: #f7f7f7;
+  color: #333;
+  border: 1px solid #e6e6e6;
+  font-size: 0.9rem;
+}
+
+.table-container td, .custom-table td {
+  padding: 1rem 1.25rem;
+  color: #444;
+  background: #ffffff;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  transition: background-color 0.2s ease;
+}
+
+.table-container tbody tr:hover td, .custom-table tbody tr:hover td {
+  background-color: #fcfcfc;
+}
+
+.table-container td:first-child, .custom-table td:first-child {
+  border-left: 1px solid #e6e6e6;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.table-container td:last-child, .custom-table td:last-child {
+  border-right: 1px solid #e6e6e6;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.table-container th:first-child, .custom-table th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.table-container th:last-child, .custom-table th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.table-container tbody tr, .custom-table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.table-container tbody tr:hover td, .custom-table tbody tr:hover td {
+  background: #fcfcfc;
+  border-color: #d4d4d4;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.table-container .tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+
+.table-container .tag.vip {
+  background: var(--seg-vip-soft);
+  color: var(--seg-vip);
+  border: 1px solid var(--seg-vip);
+}
+
+.table-container .tag.high {
+  background: var(--seg-high-soft);
+  color: var(--seg-high);
+  border: 1px solid var(--seg-high);
+}
+
+.table-container .tag.medium {
+  background: var(--seg-medium-soft);
+  color: var(--seg-medium);
+  border: 1px solid var(--seg-medium);
+}
+
+.table-container .tag.low {
+  background: var(--seg-low-soft);
+  color: var(--seg-low);
+  border: 1px solid var(--seg-low);
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  font-family: Arial, sans-serif;
+  color: #111;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #111;
+}
+
+.modal-body .info-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.modal-divider {
+  border: 0;
+  height: 1px;
+  background: #e6e6e6;
+  margin: 20px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+.info-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  color: #111;
+  font-weight: 500;
+  font-size: 1.05rem;
+}

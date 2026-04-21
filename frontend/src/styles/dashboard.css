@@ -1,0 +1,108 @@
+.dashboard {
+  min-height: 100vh;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding-top: 0;
+  background: var(--color-surface);
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  box-sizing: border-box;
+}
+
+.dashboard h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.75rem;
+  padding-top: clamp(0.75rem, 2vw, 1rem);
+  color: #0a0a0a;
+}
+
+.segments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.segment-card {
+  background: #ffffff;
+  padding: 1.5rem 1.6rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.segment-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: #d4d4d4;
+  transform: translateY(-2px);
+}
+
+.segment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.segment-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.segment-card > p {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-ink-muted);
+}
+
+.dot {
+  flex-shrink: 0;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+
+.dashboard .low {
+  background: var(--seg-low);
+}
+.dashboard .medium {
+  background: var(--seg-medium);
+}
+.dashboard .high {
+  background: var(--seg-high);
+}
+.dashboard .vip {
+  background: var(--seg-vip);
+}
+
+.percent {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.chart-section {
+  background: #ffffff;
+  padding: 1.5rem clamp(1rem, 3vw, 1.75rem);
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+.chart-section h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+}

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Syne", var(--font-sans);
+  --color-ink: #0a0a0a;
+  --color-ink-muted: #525252;
+  --color-border: #e5e5e5;
+  --color-surface: #fafafa;
+
+
+  --seg-low: #4f46e5;
+  --seg-low-soft: rgba(79, 70, 229, 0.12);
+  --seg-low-text: #3730a3;
+  --seg-medium: #0d9488;
+  --seg-medium-soft: rgba(13, 148, 136, 0.14);
+  --seg-medium-text: #0f766e;
+  --seg-high: #d97706;
+  --seg-high-soft: rgba(217, 119, 6, 0.16);
+  --seg-high-text: #9a3412;
+  --seg-vip: #7c3aed;
+  --seg-vip-soft: rgba(124, 58, 237, 0.14);
+  --seg-vip-text: #ffffff;
+}

@@ -1,0 +1,112 @@
+.page-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+.page-loading .loading-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+}
+
+.loading-spinner-wrap {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 2rem;
+}
+
+.loading-spinner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #e5e5e5;
+  border-top-color: #0a0a0a;
+  animation: loading-spin 0.85s linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  color: #0a0a0a;
+}
+
+.loading-messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 20rem;
+  text-align: left;
+}
+
+.loading-messages li {
+  font-size: 0.9375rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-bottom: 0.65rem;
+  padding-left: 1.25rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.45s ease, transform 0.45s ease, color 0.35s ease;
+}
+
+.loading-messages li.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  color: #404040;
+}
+
+.loading-messages li.is-active {
+  color: #0a0a0a;
+  font-weight: 600;
+}
+
+.loading-messages li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d4d4d4;
+  transition: background 0.35s ease;
+}
+
+.loading-messages li.is-visible::before {
+  background: #a3a3a3;
+}
+
+.loading-messages li.is-active::before {
+  background: #0a0a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+    border-top-color: #0a0a0a;
+  }
+
+  .loading-messages li {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
