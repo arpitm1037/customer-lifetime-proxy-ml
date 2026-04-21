@@ -183,3 +183,105 @@ This project builds a **proxy-based CLV prediction system** to solve this gap.
 ---
 
 ## 📂 Project Structure
+
+
+│
+├── frontend/ # React UI
+├── backend/ # Django API
+├── ml/ # ML pipeline (features + model)
+├── database/ # Schema & migrations
+├── docker/ # Docker configs
+└── README.md
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+```bash
+git clone <repo-url>
+cd project
+
+2️⃣ Environment Variables
+
+Create .env file:
+
+DATABASE_NAME=ltv_db
+DATABASE_USER=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_HOST=db
+DATABASE_PORT=5432
+
+DJANGO_SECRET_KEY=your-secret-key
+DEBUG=True
+
+3️⃣ Run with Docker
+
+docker-compose up --build
+
+4️⃣ Access App
+Frontend: http://localhost:3000
+Backend: http://localhost:8000
+
+🔌 API Endpoints
+
+| Endpoint                    | Method | Description       |
+| --------------------------- | ------ | ----------------- |
+| `/api/datasets/upload`      | POST   | Upload dataset    |
+| `/api/analysis/run`         | POST   | Run ML pipeline   |
+| `/api/analysis/status/{id}` | GET    | Check status      |
+| `/api/insights/segments`    | GET    | Customer segments |
+| `/api/insights/cohorts`     | GET    | Cohort analysis   |
+| `/api/customers/{id}`       | GET    | Customer details  |
+
+
+🚀 Deployment (Docker + AWS EC2)
+Launch EC2 instance
+Install Docker:
+
+sudo apt update
+sudo apt install docker docker-compose -y
+
+Clone repo:
+git clone <repo-url>
+cd project
+
+Run:
+docker-compose up --build -d
+
+🔄 Application Workflow
+Upload dataset
+Data cleaning & feature engineering
+Model training & prediction
+Store results in DB
+View insights in dashboard
+
+📦 Data Persistence
+PostgreSQL with Docker volumes
+Data persists across restarts
+
+🔐 Security
+Environment variables for secrets
+Database not publicly exposed
+
+📈 Future Improvements
+SHAP explainability
+XGBoost comparison
+Real-time predictions
+Background job queues
+Multi-tenant architecture
+
+🎯 Success Metrics
+Macro F1-score > baseline
+Clear customer segmentation
+Meaningful cohort trends
+End-to-end pipeline execution
+User-friendly dashboard
+Explainable model behavior
+
+
+👨‍💻 Author
+Arpit Mishra
+B.Tech CSE (AI/ML)
+
