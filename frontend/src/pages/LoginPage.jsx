@@ -20,8 +20,9 @@ function LoginPage({ onLoginSuccess, goSignup, goBack }) {
 
     setLoading(true);
     try {
-      await loginUser({ email, password });
-      onLoginSuccess();
+      const res = await loginUser({ email, password });
+      const user = res?.data?.user || { email };
+      onLoginSuccess(user);
     } catch (err) {
       if (err.response && err.response.data && err.response.data.error) {
         setError(err.response.data.error);

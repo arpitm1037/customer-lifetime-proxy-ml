@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import upload_data, generate_features, predict, get_predictions, get_cohorts, get_customer_detail
+from .views import upload_data, generate_features, predict, get_predictions, get_cohorts, get_customer_detail, save_history, get_history, get_history_detail
 from .auth_views import signup, login_view
 
 urlpatterns = [
@@ -11,4 +11,7 @@ urlpatterns = [
     path('customer/<int:customer_id>/', get_customer_detail),
     path('auth/signup/', signup),
     path('auth/login/', login_view),
+    path('history/save/', save_history),
+    path('history/list/', get_history),
+    path('history/detail/<int:history_id>/', get_history_detail),
 ]

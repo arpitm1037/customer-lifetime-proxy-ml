@@ -36,3 +36,17 @@ export const signupUser = (payload) => {
 export const loginUser = (payload) => {
   return axios.post(`${BASE_URL}/auth/login/`, payload);
 };
+
+export const saveHistory = (payload) => {
+  return axios.post(`${BASE_URL}/history/save/`, payload);
+};
+
+export const getHistory = (email) => {
+  return axios.get(`${BASE_URL}/history/list/`, { params: { email } });
+};
+
+export const getHistoryDetail = (historyId, email) => {
+  return axios.get(`${BASE_URL}/history/detail/${historyId}/`, {
+    params: email ? { email } : {},
+  });
+};

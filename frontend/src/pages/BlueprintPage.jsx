@@ -79,6 +79,52 @@ function BlueprintPage({ goBack, goUpload, goAbout }) {
           • <strong>Customer-Level Analysis</strong> for targeted marketing and action.
         </p>
 
+        <div
+          style={{
+            backgroundColor: "#fbfbfb",
+            border: "1px solid #dcdcdc",
+            borderLeft: "5px solid #111",
+            borderRadius: "12px",
+            padding: "22px",
+            marginBottom: "30px",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.05)",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px", flexWrap: "wrap", gap: "8px" }}>
+            <h3 style={{ margin: 0 }}>Required Dataset Structure</h3>
+            <span style={{ backgroundColor: "#111", color: "#fff", fontSize: "12px", letterSpacing: "0.5px", padding: "4px 10px", borderRadius: "999px", fontWeight: 600 }}>
+              MANDATORY
+            </span>
+          </div>
+          <p style={{ color: "#666", fontSize: "14px", marginBottom: "15px", lineHeight: "1.6" }}>
+            To run analysis, your CSV <strong>must</strong> include these exact 6 column names. Extra columns are allowed and will be ignored automatically.
+          </p>
+          <div style={{ backgroundColor: "#fff", border: "1px solid #e7e7e7", borderRadius: "10px", padding: "10px" }}>
+            <table className="custom-table" style={{ fontSize: "14px", background: "#fff", marginBottom: 0 }}>
+              <thead>
+                <tr>
+                  <th>CustomerID</th>
+                  <th>InvoiceDate</th>
+                  <th>InvoiceNo</th>
+                  <th>Quantity</th>
+                  <th>UnitPrice</th>
+                  <th>TotalAmount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>17850</td>
+                  <td>12/1/2010 8:26</td>
+                  <td>536365</td>
+                  <td>6</td>
+                  <td>2.55</td>
+                  <td>15.30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <div className="segments">
           {Object.keys(segmentStats).map((key) => {
             const seg = segmentStats[key];

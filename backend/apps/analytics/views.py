@@ -7,10 +7,13 @@ from rest_framework import status
 
 import pandas as pd
 
-from apps.analytics.models import Transaction, Customer, CustomerFeatures, Prediction
+from apps.analytics.models import Transaction, Customer, CustomerFeatures, Prediction, AnalysisHistory
 from ml.model_loader import load_model
 
-REQUIRED_COLUMNS = {"CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate"}
+import json
+from django.contrib.auth.models import User
+
+REQUIRED_COLUMNS = {"CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate", "TotalAmount"}
 
 
 _ANALYTICS_WRITE_LOCK = threading.Lock()
@@ -60,32 +63,57 @@ def upload_data(request):
     if df.empty:
         return Response({"error": "CSV file is empty"}, status=status.HTTP_400_BAD_REQUEST)
 
-    if not REQUIRED_COLUMNS.issubset(df.columns):
+    
+    df.columns = [str(c).strip() for c in df.columns]
+
+    # Normalize header casing so existing datasets keep working.
+    canonical_by_lower = {col.lower(): col for col in REQUIRED_COLUMNS}
+    rename_map = {}
+    for col in df.columns:
+        normalized = col.strip().lower()
+        if normalized in canonical_by_lower:
+            rename_map[col] = canonical_by_lower[normalized]
+    if rename_map:
+        df = df.rename(columns=rename_map)
+
+    # Backward compatibility: derive TotalAmount when older datasets omit it.
+    if "TotalAmount" not in df.columns and "Quantity" in df.columns and "UnitPrice" in df.columns:
+        try:
+            df["TotalAmount"] = pd.to_numeric(df["Quantity"], errors="coerce") * pd.to_numeric(df["UnitPrice"], errors="coerce")
+        except Exception:
+            pass
+
+    missing_cols = REQUIRED_COLUMNS - set(df.columns)
+    if missing_cols:
         return Response(
             {
                 "error": "Missing required columns",
                 "required": sorted(REQUIRED_COLUMNS),
+                "found": list(df.columns)
             },
             status=status.HTTP_400_BAD_REQUEST,
         )
 
-    
-    df = df.sample(n=30000, random_state=42)
+    if len(df) > 30000:
+        df = df.sample(n=30000, random_state=42)
 
-    df = df.dropna(subset=["CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate"])
+    # Keep internal processing strictly scoped to required columns only.
+    df = df[["CustomerID", "InvoiceDate", "InvoiceNo", "Quantity", "UnitPrice", "TotalAmount"]].copy()
+
+    df = df.dropna(subset=["CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate", "TotalAmount"])
 
     
     df["CustomerID"] = df["CustomerID"].astype(int)
     df["Quantity"] = df["Quantity"].astype(int)
     df["UnitPrice"] = df["UnitPrice"].astype(float)
-    df["total_price"] = df["Quantity"] * df["UnitPrice"]
+    df["total_price"] = df["TotalAmount"].astype(float)
 
     df["invoice_date"] = pd.to_datetime(df["InvoiceDate"], errors="coerce", utc=True)
     df = df.dropna(subset=["invoice_date"])
 
-    df["stock_code"] = df["StockCode"].astype(str).str[:50] if "StockCode" in df.columns else "-"
-    df["description"] = df["Description"].astype(str) if "Description" in df.columns else None
-    df["country"] = df["Country"].astype(str).str[:100] if "Country" in df.columns else None
+    df["stock_code"] = "-"
+    df["description"] = None
+    df["country"] = None
 
     customers = (
     df.groupby("CustomerID")["country"]
@@ -368,5 +396,94 @@ def get_customer_detail(request, customer_id):
             "trend": features.trend,
         })
 
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
+
+
+@api_view(["POST"])
+def save_history(request):
+    try:
+        user_email = request.data.get("email")
+        if not user_email:
+            return Response({"error": "Email is required"}, status=400)
+            
+        user = User.objects.filter(email=user_email).first()
+        if not user:
+            return Response({"error": "User not found"}, status=404)
+            
+        filename = request.data.get("filename", "Dataset")
+        result_data = request.data.get("metrics_json", {})
+        
+        AnalysisHistory.objects.create(
+            user=user,
+            uploaded_file_name=filename,
+            result_data=result_data
+        )
+        return Response({"message": "History saved"})
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
+
+@api_view(["GET"])
+def get_history(request):
+    try:
+        user_email = request.GET.get("email")
+        if not user_email:
+            return Response({"error": "Email is required"}, status=400)
+            
+        user = User.objects.filter(email=user_email).first()
+        if not user:
+            return Response({"error": "User not found"}, status=404)
+            
+        histories = AnalysisHistory.objects.filter(user=user).order_by("-created_at")
+        data = []
+        for h in histories:
+            result_data = h.result_data if isinstance(h.result_data, dict) else {}
+            analysis_rows = result_data.get("data", []) if isinstance(result_data.get("data", []), list) else []
+            segment_counts = {}
+            for row in analysis_rows:
+                if not isinstance(row, dict):
+                    continue
+                bucket = row.get("predicted_bucket")
+                if bucket:
+                    segment_counts[bucket] = segment_counts.get(bucket, 0) + 1
+
+            top_segment = None
+            if segment_counts:
+                top_segment = max(segment_counts, key=segment_counts.get)
+
+            data.append({
+                "id": h.id,
+                "filename": h.uploaded_file_name,
+                "created_at": h.created_at,
+                "summary": {
+                    "total_customers": len(analysis_rows),
+                    "top_segment": top_segment,
+                }
+            })
+        return Response(data)
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
+
+@api_view(["GET"])
+def get_history_detail(request, history_id):
+    try:
+        user_email = request.GET.get("email")
+        history_qs = AnalysisHistory.objects.filter(id=history_id)
+        if user_email:
+            user = User.objects.filter(email=user_email).first()
+            if not user:
+                return Response({"error": "User not found"}, status=404)
+            history_qs = history_qs.filter(user=user)
+
+        history = history_qs.first()
+        if not history:
+            return Response({"error": "History not found"}, status=404)
+            
+        return Response({
+            "id": history.id,
+            "filename": history.uploaded_file_name,
+            "created_at": history.created_at,
+            "metrics_json": history.result_data
+        })
     except Exception as e:
         return Response({"error": str(e)}, status=500)

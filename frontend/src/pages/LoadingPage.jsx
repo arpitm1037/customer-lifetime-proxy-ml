@@ -6,6 +6,7 @@ import {
   runPrediction,
   getPredictions,
   getCohorts,
+  saveHistory,
 } from "../api/api";
 import "../styles/main.css";
 import "../styles/loading.css";
@@ -43,7 +44,7 @@ function buildChartDataFromPredictions(rows) {
   return Object.values(counts);
 }
 
-function LoadingPage({ file, onComplete, onError, onBack, goAbout }) {
+function LoadingPage({ file, onComplete, onError, onBack, goAbout, currentUser }) {
   const [visibleSteps, setVisibleSteps] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
   const pipelineGenRef = useRef(0);
@@ -102,11 +103,25 @@ function LoadingPage({ file, onComplete, onError, onBack, goAbout }) {
         if (runId !== pipelineGenRef.current) return;
 
         const chartData = buildChartDataFromPredictions(res.data);
-        onCompleteRef.current({ 
+        const payload = { 
           data: res.data, 
           chartData,
           cohortData: cohortRes.data
-        });
+        };
+
+        if (file && currentUser) {
+          try {
+            await saveHistory({
+              email: currentUser.email,
+              filename: file.name,
+              metrics_json: payload,
+            });
+          } catch (historyErr) {
+            console.error("Could not save history:", historyErr);
+          }
+        }
+
+        onCompleteRef.current(payload);
       } catch (err) {
         console.error(err);
         if (runId !== pipelineGenRef.current) return;
