@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://3.93.162.204"
+const BASE_URL = "http://3.93.162.204/api/analytics"
 
 export const uploadFile = (file) => {
   const formData = new FormData();
