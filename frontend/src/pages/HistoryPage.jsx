@@ -14,7 +14,7 @@ function HistoryPage({ currentUser, goBack, goUpload, onDataLoaded }) {
       try {
         const res = await getHistory(currentUser.email);
         setHistoryList(res.data);
-      } catch (err) {
+      } catch {
         setError("Failed to load history.");
       } finally {
         setLoading(false);
@@ -31,7 +31,7 @@ function HistoryPage({ currentUser, goBack, goUpload, onDataLoaded }) {
       } else {
         alert("No data found for this analysis.");
       }
-    } catch (err) {
+    } catch {
       alert("Failed to load analysis details.");
     }
   };

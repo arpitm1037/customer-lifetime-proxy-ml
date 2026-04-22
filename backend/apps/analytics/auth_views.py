@@ -19,7 +19,7 @@ def signup(request):
         return Response({"error": "User already exists"}, status=400)
         
     try:
-        user = User.objects.create_user(username=email, email=email, password=password, first_name=name)
+        User.objects.create_user(username=email, email=email, password=password, first_name=name)
         return Response({"message": "Signup successful"})
     except Exception as e:
         return Response({"error": str(e)}, status=500)

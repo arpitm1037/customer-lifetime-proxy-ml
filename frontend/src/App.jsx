@@ -75,7 +75,7 @@ function App() {
       } else {
         setScreen("blueprint");
       }
-    } catch (e) {
+    } catch {
       setScreen("blueprint");
     }
   };

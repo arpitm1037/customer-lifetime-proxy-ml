@@ -10,7 +10,6 @@ import pandas as pd
 from apps.analytics.models import Transaction, Customer, CustomerFeatures, Prediction, AnalysisHistory
 from ml.model_loader import load_model
 
-import json
 from django.contrib.auth.models import User
 
 REQUIRED_COLUMNS = {"CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate", "TotalAmount"}
@@ -27,10 +26,7 @@ REJECTED_UPLOAD_CONTENT_TYPES = frozenset({
     "application/zip",
     "application/x-zip-compressed",
 })
-
-
-
-# 1. UPLOAD CSV
+# API: Upload CSV data
 @api_view(["POST"])
 def upload_data(request):
     file = request.FILES.get("file")
@@ -66,7 +62,6 @@ def upload_data(request):
     
     df.columns = [str(c).strip() for c in df.columns]
 
-    # Normalize header casing so existing datasets keep working.
     canonical_by_lower = {col.lower(): col for col in REQUIRED_COLUMNS}
     rename_map = {}
     for col in df.columns:
@@ -76,7 +71,6 @@ def upload_data(request):
     if rename_map:
         df = df.rename(columns=rename_map)
 
-    # Backward compatibility: derive TotalAmount when older datasets omit it.
     if "TotalAmount" not in df.columns and "Quantity" in df.columns and "UnitPrice" in df.columns:
         try:
             df["TotalAmount"] = pd.to_numeric(df["Quantity"], errors="coerce") * pd.to_numeric(df["UnitPrice"], errors="coerce")
@@ -97,7 +91,6 @@ def upload_data(request):
     if len(df) > 30000:
         df = df.sample(n=30000, random_state=42)
 
-    # Keep internal processing strictly scoped to required columns only.
     df = df[["CustomerID", "InvoiceDate", "InvoiceNo", "Quantity", "UnitPrice", "TotalAmount"]].copy()
 
     df = df.dropna(subset=["CustomerID", "InvoiceNo", "Quantity", "UnitPrice", "InvoiceDate", "TotalAmount"])
@@ -158,11 +151,7 @@ def upload_data(request):
             Transaction.objects.bulk_create(transactions, batch_size=1000)
 
     return Response({"message": "Data uploaded successfully"})
-
-
-
-# 2. FEATURE GENERATION
-
+# API: Generate customer features
 @api_view(["POST"])
 def generate_features(request):
 
@@ -230,9 +219,7 @@ def generate_features(request):
         CustomerFeatures.objects.bulk_create(objs)
 
     return Response({"message": "Features generated"})
-
-
-# 3. PREDICTION
+# API: Run prediction model
 @api_view(["POST"])
 def predict(request):
 
@@ -281,10 +268,7 @@ def predict(request):
         Prediction.objects.bulk_create(objs)
 
     return Response({"message": "Prediction done"})
-
-
-# 4. GET RESULTS
-
+# API: Get predictions
 @api_view(["GET"])
 def get_predictions(request):
 
@@ -313,8 +297,7 @@ def get_predictions(request):
 
     return Response(data)
 
-# 5. COHORT ANALYSIS
-
+# API: Get cohort analysis
 @api_view(["GET"])
 def get_cohorts(request):
     df = pd.DataFrame(list(Transaction.objects.values()))
@@ -368,8 +351,7 @@ def get_cohorts(request):
 
     return Response(result)
 
-# 6. CUSTOMER DETAIL
-
+# API: Get customer detail
 @api_view(["GET"])
 def get_customer_detail(request, customer_id):
     try:
@@ -399,7 +381,7 @@ def get_customer_detail(request, customer_id):
     except Exception as e:
         return Response({"error": str(e)}, status=500)
 
-
+# API: Save analysis history
 @api_view(["POST"])
 def save_history(request):
     try:
@@ -422,7 +404,7 @@ def save_history(request):
         return Response({"message": "History saved"})
     except Exception as e:
         return Response({"error": str(e)}, status=500)
-
+# API: Get analysis history list
 @api_view(["GET"])
 def get_history(request):
     try:
@@ -463,7 +445,7 @@ def get_history(request):
         return Response(data)
     except Exception as e:
         return Response({"error": str(e)}, status=500)
-
+# API: Get analysis history detail
 @api_view(["GET"])
 def get_history_detail(request, history_id):
     try:
