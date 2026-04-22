@@ -97,7 +97,7 @@ function BlueprintPage({ goBack, goUpload, goAbout }) {
             </span>
           </div>
           <p style={{ color: "#666", fontSize: "14px", marginBottom: "15px", lineHeight: "1.6" }}>
-            To run analysis, your CSV <strong>must</strong> include these exact 6 column names. Extra columns are allowed and will be ignored automatically.
+            To run analysis, your CSV <strong>must</strong> include these exact 6 column names.
           </p>
           <div style={{ backgroundColor: "#fff", border: "1px solid #e7e7e7", borderRadius: "10px", padding: "10px" }}>
             <table className="custom-table" style={{ fontSize: "14px", background: "#fff", marginBottom: 0 }}>

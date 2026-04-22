@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://3.93.162.204/api/analytics"
+const BASE_URL = "http://3.93.162.204/api/analytics";
 
 export const uploadFile = (file) => {
   const formData = new FormData();
@@ -50,3 +50,5 @@ export const getHistoryDetail = (historyId, email) => {
     params: email ? { email } : {},
   });
 };
+
+
