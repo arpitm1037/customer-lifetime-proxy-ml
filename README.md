@@ -1,3 +1,6 @@
+URL: http://retail-ltv.3.93.162.204.nip.io/
+
+
 # 🛒 Retail Customer Lifetime Proxy Modeling
 
 An end-to-end **Machine Learning + Full Stack application** that predicts customer lifetime value using a **proxy-based approach** and provides actionable insights through a dashboard.
